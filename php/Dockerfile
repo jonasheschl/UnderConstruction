@@ -19,7 +19,6 @@ RUN apt-get update && \
     && apt-get install -y netcat-traditional \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ports.conf /etc/apache2/
 COPY src/ /var/www/html
 
 VOLUME /var/run
