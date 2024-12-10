@@ -11,6 +11,7 @@ services:
       - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
       - MYSQL_USER=constructor
       - PHP_HOST=underconstruction.ctf.alpsec.at
+    depends_on: [database]
 
   php:
     build: php
@@ -23,6 +24,7 @@ services:
       - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
       - MYSQL_USER=constructor
       - FLAG=cjr{t00_much_c0nstruct10n_g01ng_0n}
+    depends_on: [database]
   
   database:
     image: mysql:8.0.40-debian
@@ -30,3 +32,4 @@ services:
       - MYSQL_DATABASE=underconstruction
       - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
       - MYSQL_USER=constructor
+      - MYSQL_ROOT_PASSWORD=nfljnk2lfn2f2kln234kl4
