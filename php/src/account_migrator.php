@@ -53,7 +53,7 @@ function insertUser($username, $password, $tier)
 	$charset = "utf8";
 	$port = "3306";
 
-	$sql_username = "forge";
+	$sql_username = getenv("MYSQL_USER");
 	$sql_password = getenv("MYSQL_PASSWORD");
 	try {
 		$pdo = new PDO(
