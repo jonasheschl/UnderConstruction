@@ -30,4 +30,4 @@ RUN pip install -r requirements.txt
 COPY ./start.sh /tmp
 COPY ./cleanup.sh /tmp
 
-CMD ["/tmp/start.sh"]
+CMD ["sh", "/tmp/start.sh"]
