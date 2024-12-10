@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM python:3.11-bookworm
+FROM python:3.11-bullseye
 
 RUN apt-get update && \
     apt-get install -y mysql-client \
