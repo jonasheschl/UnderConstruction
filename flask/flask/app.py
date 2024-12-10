@@ -33,6 +33,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = os.environ['FLASK_SECRET_KEY']
     app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{DB_HOST}/{MYSQL_DATABASE}'
+    print("Connecting to database via " + app.config['SQLALCHEMY_DATABASE_URI'])
 
     db.init_app(app)
     import models
