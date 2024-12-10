@@ -16,6 +16,6 @@
 
 sh /tmp/cleanup.sh &
 while true; do
-  gunicorn -b 0.0.0.0:1337 -k gevent "app:create_app()"
+  gunicorn -b 0.0.0.0:80 -k gevent "app:create_app()"
 done
 
