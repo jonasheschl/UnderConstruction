@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/kctf-docker/challenge@sha256:d884e54146b71baf91603d5b73e563eaffc5a42d494b1e32341a5f76363060fb
+FROM python:3.11-bookworm
 
 RUN apt-get update && \
     apt-get install -y mysql-client \
@@ -30,6 +30,4 @@ RUN pip install -r requirements.txt
 COPY ./start.sh /tmp
 COPY ./cleanup.sh /tmp
 
-CMD kctf_setup && \
-    /tmp/start.sh
-
+CMD ["/tmp/start.sh"]
