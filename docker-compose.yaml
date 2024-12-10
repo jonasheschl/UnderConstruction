@@ -11,6 +11,7 @@ services:
       - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
       - MYSQL_USER=constructor
       - PHP_HOST=underconstruction.ctf.alpsec.at
+      - FLASK_SECRET_KEY=fj2lkjrf2ffl2knl2f
     depends_on: [database]
 
   php:
