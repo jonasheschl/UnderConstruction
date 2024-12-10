@@ -1,0 +1,32 @@
+services:
+
+  flask:
+    build: flask
+    ports:
+      - "127.0.0.1:33005:80"
+    environment:
+      - MIGRATOR_TOKEN=fn2ln23jkn23n2lnkf
+      - DB_HOST=database
+      - MYSQL_DATABASE=underconstruction
+      - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
+      - MYSQL_USER=constructor
+      - PHP_HOST=underconstruction.ctf.alpsec.at
+
+  php:
+    build: php
+    ports:
+      - "127.0.0.1:33006:80"
+    environment:
+      - MIGRATOR_TOKEN=fn2ln23jkn23n2lnkf
+      - DB_HOST=database
+      - MYSQL_DATABASE=underconstruction
+      - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
+      - MYSQL_USER=constructor
+      - FLAG=cjr{t00_much_c0nstruct10n_g01ng_0n}
+  
+  database:
+    image: mysql:8.0.40-debian
+    environment:
+      - MYSQL_DATABASE=underconstruction
+      - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
+      - MYSQL_USER=constructor
