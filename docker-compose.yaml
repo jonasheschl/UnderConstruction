@@ -34,3 +34,5 @@ services:
       - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
       - MYSQL_USER=constructor
       - MYSQL_ROOT_PASSWORD=nfljnk2lfn2f2kln234kl4
+    ports:
+      - "127.0.0.1:3306:3306"
