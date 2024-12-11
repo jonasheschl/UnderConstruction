@@ -12,7 +12,9 @@ services:
       - MYSQL_USER=constructor
       - PHP_HOST="php:33006"
       - FLASK_SECRET_KEY=fj2lkjrf2ffl2knl2f
-    depends_on: [database]
+    depends_on:
+      database:
+        condition: service_healthy
 
   php:
     build: php
@@ -25,7 +27,9 @@ services:
       - MYSQL_PASSWORD=fnmk3wkj22fjkn2f
       - MYSQL_USER=constructor
       - FLAG=cjr{t00_much_c0nstruct10n_g01ng_0n}
-    depends_on: [database]
+    depends_on:
+      database:
+        condition: service_healthy
   
   database:
     image: mysql:8.0.40-debian
