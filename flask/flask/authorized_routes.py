@@ -73,7 +73,7 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
 
-    requests.post(f"http://{PHP_HOST}:1337/account_migrator.php", 
+    requests.post(f"http://{PHP_HOST}/account_migrator.php", 
         headers={"token": TOKEN, "content-type": request.headers.get("content-type")}, data=raw_request)
     return redirect(url_for('authorized.login'))
 

@@ -59,6 +59,6 @@ def create_app():
         with app.app_context():
             models.User.query.delete()
             db.session.commit()
-        requests.post(f"http://{PHP_HOST}:1337/account_cleanup.php", headers={"token": TOKEN})
+        requests.post(f"http://{PHP_HOST}/account_cleanup.php", headers={"token": TOKEN})
 
     return app
