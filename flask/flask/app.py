@@ -22,7 +22,7 @@ import os
 
 db = SQLAlchemy()
 
-PHP_HOST = 'under-construction-php'
+PHP_HOST = os.environ.get('PHP_HOST')
 TOKEN = os.environ.get('MIGRATOR_TOKEN','missing_token')
 MYSQL_USER = os.environ.get('MYSQL_USER')
 MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD')
