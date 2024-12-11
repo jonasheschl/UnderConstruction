@@ -27,7 +27,4 @@ VOLUME /tmp
 
 RUN pip install -r requirements.txt
 
-COPY ./start.sh /tmp
-COPY ./cleanup.sh /tmp
-
 CMD ["gunicorn", "-b", "0.0.0.0:80", "-k", "gevent", "app:create_app()"]
