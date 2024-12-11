@@ -30,4 +30,4 @@ RUN pip install -r requirements.txt
 COPY ./start.sh /tmp
 COPY ./cleanup.sh /tmp
 
-CMD ["sh", "/tmp/start.sh"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "-k", "gevent", "app:create_app()"]
